@@ -1,10 +1,18 @@
 import React from 'react';
+import ExpenseItem from './ExpenseItem'
 
-const ExpensesList = () => {
+const ExpensesList = (props) => {
   return (
-    <div>
-      <h1>Expenses List</h1>
-    </div>
+    <ul className='expenses-list'>
+    {props.items.map((expense) => (
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
+      ))}
+    </ul>
   )
 }
 
