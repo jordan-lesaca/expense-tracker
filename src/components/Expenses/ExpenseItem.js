@@ -8,18 +8,18 @@ const ExpenseItem = (props) => {
 
   return (
     <li>
-    <Card>
+    <Card className='expense-item'>
     <div>
       <div>{month}</div>
       <div>{year}</div>
       <div>{day}</div>
     </div>
 
-      <div>
+      <div className='expense-item-desc'>
         <h2>{props.title}</h2>
-        <div>${props.amount}</div>
+        <div className='expense-item-price'>${props.amount}</div>
       </div>
-      
+
     </Card>
     </li>
   );

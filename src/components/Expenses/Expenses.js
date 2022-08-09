@@ -4,7 +4,7 @@ import ExpenseFilter from './ExpenseFilter'
 import Card from '../UI/Card'
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState('')
+  const [filteredYear, setFilteredYear] = useState('2022')
 
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -15,17 +15,15 @@ const Expenses = (props) => {
   })
 
   return (
-    <Card>
-      <div>
+    <div>
+      <Card className='expenses'>
         <ExpenseFilter
           selected={filteredYear}
           onChangeFilter={filterChangeHandler} 
         />
-        <h1>Expense Page</h1>
-        {console.log(props.items)}
         <ExpensesList items={filteredExpenses} />
-      </div>
-    </Card>
+      </Card>
+    </div>
   );
 };
 
